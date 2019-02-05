@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trivia Game</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- would like to make a html body background with a smaller container within it that is responsive and stays centered. -->
+    <!-- this container will hold the smaller container that will have the game title and the question below it. -->
+    <!-- then below this container will be a two column container that will hold the possible answers to the question -->
+    <!-- you will be able to click on the answer and if it is right it will turn green and the next question will appear after 2 seconds. -->
+    <!-- each question will need to have the same timer put on it. If you dont answer in the allotted time, then all answers will turn red and you will get the question wrong. -->
+    <!-- if you get a question wrong you can continue to play to the end. The screen will show you your score out of 5 or 7 when the game is done -->
+    <!-- for the timer we can have that sitting in a box centered below the question and above the multiple choice answers. -->
+
+    <div id="fullGameBox" class="container">
+        <div id="questionWindow" class="container">
+            <h1>This Is US Georgraphy Trivia</h1>
+            <h3 id="triviaQuestion">Click start to begin game</h3>
+            <div class="row" id="start-button-row">
+                <button id="start-button">Start</button>
+            </div>
+            <div class="row hidden">
+                <div class="col-sm-6" style="background-color: transparent">
+                    <button class="answerOptions" class="col-sm-12" style="background-color: blueviolet">
+                        some text
+                    </button>
+                </div>
+                <div class="col-sm-6" style="background-color: transparent">
+                    <button class="answerOptions" class="col-sm-12" style="background-color: blueviolet">
+                        some text
+                    </button>
+                </div>
+            </div>
+            <div class="row hidden">
+                <div class="col-sm-6" style="background-color: transparent">
+                    <button class="answerOptions" class="col-sm-12" style="background-color: blueviolet">
+                        some text
+                    </button>
+                </div>
+                <div class="col-sm-6" style="background-color: transparent">
+                    <button class="answerOptions" class="col-sm-12" style="background-color: blueviolet">
+                        some text
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="assets/javascript/app.js"></script>
+</body>
+
+</html>
