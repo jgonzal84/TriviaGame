@@ -1,5 +1,7 @@
 var currentQuestionIndex = 0;
 var numberCorrect = 0;
+var timer = 10;
+var timerInterval;
 
 var questionLibrary = [
     {
@@ -54,7 +56,23 @@ var questionLibrary = [
     },
 ]
 
+function timerUpdate(){
+    if (timer === 0){
+        alert("Time's up! Answer the next question faster.")
+        timer = 10;
+        currentQuestionIndex = currentQuestionIndex + 1;
+        clearInterval(timerInterval);
+        populateQA();
+        return;
+    } else {
+        document.getElementById("timerBox").innerText = timer;
+        timer = timer - 1;
+    }
+}
+
 function populateQA(){
+    timerUpdate();
+    timerInterval = setInterval(timerUpdate, 1000);
     var randomizeAnswers = Math.floor(Math.random()*4)
     document.getElementById("triviaQuestion").innerHTML = questionLibrary[currentQuestionIndex].question;
     document.getElementsByClassName("answerOptions")[0].innerText = questionLibrary[currentQuestionIndex].allAnswers[randomizeAnswers];
@@ -74,6 +92,8 @@ $('.answerOptions').click(function(event){
     } else {
         alert("Sorry, that's not right.")
     }
+    clearInterval(timerInterval);
+    timer = 10;
     currentQuestionIndex = currentQuestionIndex + 1;
     if(currentQuestionIndex > 9) {
         //display score
